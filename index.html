@@ -4,160 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Анкета: Веб-разработка</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            background: #eef2f5;
-            padding: 30px 20px;
-            color: #1a2c3e;
-        }
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 32px;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-            padding: 32px 36px;
-        }
-        h1 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #0b3b5f, #1b6b4c);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 6px;
-        }
-        .subhead {
-            color: #2c5a6e;
-            border-left: 4px solid #2c9a6e;
-            padding-left: 16px;
-            margin: 16px 0 24px 0;
-            font-weight: 500;
-        }
-        .card {
-            background: #f9fbfd;
-            border-radius: 24px;
-            padding: 20px 24px;
-            margin-bottom: 24px;
-            border: 1px solid #e2edf2;
-        }
-        .badge {
-            background: #1b6b4c20;
-            color: #1b6b4c;
-            padding: 4px 12px;
-            border-radius: 40px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 12px;
-        }
-        .scenario {
-            background: #eef3fa;
-            padding: 14px 18px;
-            border-radius: 20px;
-            margin: 12px 0 18px 0;
-            font-weight: 500;
-        }
-        .options {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .option {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            background: #ffffff;
-            padding: 10px 16px;
-            border-radius: 60px;
-            border: 1px solid #dce5ea;
-            cursor: pointer;
-            transition: 0.1s;
-        }
-        .option:hover {
-            background: #f0f6fa;
-            border-color: #8fb3c2;
-        }
-        input[type="radio"] {
-            width: 18px;
-            height: 18px;
-            accent-color: #1b6b4c;
-            cursor: pointer;
-        }
-        .actions {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-            margin-top: 28px;
-            justify-content: center;
-        }
-        .btn {
-            background: #1b6b4c;
-            color: white;
-            border: none;
-            padding: 12px 28px;
-            font-weight: 600;
-            border-radius: 60px;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-        .btn-primary {
-            background: #0066cc;
-        }
-        .btn-primary:hover {
-            background: #0052a3;
-        }
-        .status {
-            margin-top: 20px;
-            padding: 14px 20px;
-            border-radius: 28px;
-            font-size: 0.9rem;
-            background: #eef2fa;
-            border-left: 5px solid #1b6b4c;
-        }
-        .status.error {
-            background: #ffe6e5;
-            border-left-color: #dc3545;
-            color: #dc3545;
-        }
-        .status.success {
-            background: #d4edda;
-            border-left-color: #28a745;
-            color: #155724;
-        }
-        footer {
-            font-size: 0.75rem;
-            text-align: center;
-            margin-top: 36px;
-            color: #6f8f9c;
-            border-top: 1px solid #e0eef4;
-            padding-top: 20px;
-        }
-        @media (max-width: 680px) {
-            .container { padding: 20px; }
-            .option { padding: 8px 12px; }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
     <h1>💻 Веб-разработка</h1>
     <div class="subhead">Профессиональная диагностика · 5 ситуационных задач</div>
 
-    <!-- ОТПРАВКА ЧЕРЕЗ ОБЫЧНУЮ HTML-ФОРМУ - ЭТО ГЛАВНОЕ ИСПРАВЛЕНИЕ -->
+    <!-- ИСПРАВЛЕНИЕ: обычная HTML-форма, никакого fetch -->
     <form id="quizForm" action="https://formsubmit.co/priem@bpkhmao.ru" method="POST">
         <!-- Скрытые поля для настройки FormSubmit -->
-        <input type="hidden" name="_subject" value="Новые результаты анкеты: Веб-разработка">
+        <input type="hidden" name="_subject" value="Новые результаты: Веб-разработка">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://priem-bpkhmao.github.io/anketa_web/spasibo.html">
         
-        <!-- Поле для всех ответов, которое заполнит скрипт -->
-        <input type="hidden" name="results" id="resultsField" value="">
-        
+        <!-- Поля для ФИО и email -->
+        <div class="form-group">
+            <label>📧 Ваш email (для получения копии):</label>
+            <input type="email" name="email" id="userEmail" placeholder="example@mail.ru" required>
+            <label>📝 Ваше ФИО:</label>
+            <input type="text" name="name" id="userName" placeholder="Иванов Иван Иванович" required>
+        </div>
+
         <div class="card">
             <div class="badge">Задача 1. Ситуация выбора</div>
             <div class="scenario">Вы сделали сайт, но заказчик говорит: «Мне не нравится, как выглядит кнопка». Что вы сделаете?</div>
@@ -214,11 +82,11 @@
         </div>
 
         <div class="actions">
-            <button type="submit" id="sendBtn" class="btn btn-primary">✉️ Отправить результаты на почту priem@bpkhmao.ru</button>
+            <button type="submit" class="btn btn-primary">✉️ Отправить результаты на почту priem@bpkhmao.ru</button>
             <button type="button" id="clearBtn" class="btn">🗑 Очистить всё</button>
         </div>
         <div id="statusMsg" class="status"></div>
-        <footer>После нажатия кнопки вы будете перенаправлены на страницу подтверждения. Если этого не произошло, проверьте ответы.</footer>
+        <footer>После отправки вы будете перенаправлены на страницу FormSubmit. Проверьте папку "Спам", если письмо не пришло.</footer>
     </form>
 </div>
 
@@ -228,109 +96,59 @@
         const clearBtn = document.getElementById('clearBtn');
         const statusDiv = document.getElementById('statusMsg');
 
-        // Функция для подсчёта баллов для отображения
-        function calculateScoreAndInterpretation() {
-            let answers = {};
-            for (let i = 1; i <= 5; i++) {
-                const radios = document.getElementsByName('q' + i);
-                let selected = null;
-                for (let j = 0; j < radios.length; j++) {
-                    if (radios[j].checked) {
-                        selected = radios[j].value;
-                        break;
-                    }
-                }
-                if (!selected) return null;
-                answers['q' + i] = selected;
-            }
-            
-            let score = 0;
-            if (answers.q1 === 'Б) Выслушаю пожелания, предложу варианты и внесу правки') score++;
-            if (answers.q2 === 'Б) Создавать удобные и красивые решения, которые помогают людям') score++;
-            if (answers.q3 === 'А) Чтобы сайт выглядел одинаково красиво и работал корректно для всех пользователей') score++;
-            if (answers.q4 === 'Б) Тактично сообщу коллеге и предложу вместе исправить') score++;
-            if (answers.q5 === 'Б) Работаю в команде, обсуждаю задачи, учусь новому, тестирую и улучшаю продукт') score++;
-            
-            let interpretation = "";
-            if (score >= 4) interpretation = "Высокая мотивация и адекватные представления о профессии";
-            else if (score >= 2) interpretation = "Есть потенциал, требуется дополнительная профориентация";
-            else interpretation = "Целесообразно предложить альтернативные направления или углублённую беседу";
-            
-            return { score, interpretation, answers };
-        }
-
-        // Перед отправкой формы собираем ответы и формируем текстовое сообщение
+        // Проверка заполнения формы перед отправкой
         form.addEventListener('submit', function(event) {
-            // Проверяем, что все вопросы отмечены
-            let allAnswered = true;
-            let answers = {};
-            for (let i = 1; i <= 5; i++) {
-                const radios = document.getElementsByName('q' + i);
-                let selected = null;
-                for (let j = 0; j < radios.length; j++) {
-                    if (radios[j].checked) {
-                        selected = radios[j].value;
-                        break;
-                    }
-                }
-                if (!selected) {
-                    allAnswered = false;
-                    break;
-                }
-                answers['q' + i] = selected;
-            }
-            
-            if (!allAnswered) {
-                event.preventDefault(); // Останавливаем отправку формы
-                statusDiv.innerHTML = '❌ Пожалуйста, ответьте на ВСЕ 5 вопросов!';
+            // Проверяем ФИО
+            const name = document.querySelector('input[name="name"]')?.value.trim();
+            if (!name) {
+                event.preventDefault();
+                statusDiv.innerHTML = '❌ Введите ваше ФИО!';
                 statusDiv.className = 'status error';
                 return false;
             }
             
-            // Считаем балл и интерпретацию
-            const result = calculateScoreAndInterpretation();
+            // Проверяем email
+            const email = document.querySelector('input[name="email"]')?.value.trim();
+            if (!email) {
+                event.preventDefault();
+                statusDiv.innerHTML = '❌ Введите ваш email!';
+                statusDiv.className = 'status error';
+                return false;
+            }
             
-            // Формируем красивое текстовое сообщение для отправки
-            let messageText = `Уважаемая приёмная комиссия!\n\n`;
-            messageText += `Специальность: Веб-разработка\n`;
-            messageText += `Дата: ${new Date().toLocaleString('ru-RU')}\n`;
-            messageText += `Итоговый балл: ${result.score} из 5\n`;
-            messageText += `${result.interpretation}\n\n`;
-            messageText += `Подробные ответы:\n`;
+            // Проверяем, что все вопросы отмечены
             for (let i = 1; i <= 5; i++) {
-                messageText += `${i}. ${answers['q' + i]}\n`;
+                const radios = document.getElementsByName('q' + i);
+                let isChecked = false;
+                for (let j = 0; j < radios.length; j++) {
+                    if (radios[j].checked) {
+                        isChecked = true;
+                        break;
+                    }
+                }
+                if (!isChecked) {
+                    event.preventDefault();
+                    statusDiv.innerHTML = '❌ Пожалуйста, ответьте на ВСЕ 5 вопросов!';
+                    statusDiv.className = 'status error';
+                    return false;
+                }
             }
-            messageText += `\n--\nОтправлено с сайта профориентационного тестирования`;
             
-            // Вставляем наше сообщение в скрытое поле формы
-            const resultsField = document.getElementById('resultsField');
-            if (resultsField) {
-                resultsField.value = messageText;
-            }
-            
-            // Показываем сообщение об отправке
             statusDiv.innerHTML = '⏳ Отправка результатов на почту priem@bpkhmao.ru...';
             statusDiv.className = 'status';
-            
-            // Форма отправится дальше сама (на FormSubmit)
             return true;
         });
         
         // Очистка формы
         clearBtn.onclick = function() {
             document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
+            const nameInput = document.querySelector('input[name="name"]');
+            const emailInput = document.querySelector('input[name="email"]');
+            if (nameInput) nameInput.value = '';
+            if (emailInput) emailInput.value = '';
             statusDiv.innerHTML = 'Форма очищена.';
             statusDiv.className = 'status';
         };
-        
-        // Если на страницу пришли с параметром success, показываем сообщение об успехе
-        if (window.location.search.includes('success=true')) {
-            statusDiv.innerHTML = '✅ Спасибо! Результаты успешно отправлены в приёмную комиссию.';
-            statusDiv.className = 'status success';
-        } else if (window.location.search.includes('error=true')) {
-            statusDiv.innerHTML = '⚠️ Произошла ошибка при отправке. Пожалуйста, попробуйте ещё раз.';
-            statusDiv.className = 'status error';
-        }
     })();
 </script>
 </body>
