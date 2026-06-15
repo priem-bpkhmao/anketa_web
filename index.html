@@ -11,29 +11,15 @@
     <h1>💻 Веб-разработка</h1>
     <div class="subhead">Профессиональная диагностика · 5 ситуационных задач</div>
 
-    <!-- ИСПРАВЛЕНИЕ: обычная HTML-форма, никакого fetch -->
-    <form id="quizForm" action="https://formsubmit.co/priem@bpkhmao.ru" method="POST">
-        <!-- Скрытые поля для настройки FormSubmit -->
-        <input type="hidden" name="_subject" value="Новые результаты: Веб-разработка">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        
-        <!-- Поля для ФИО и email -->
-        <div class="form-group">
-            <label>📧 Ваш email (для получения копии):</label>
-            <input type="email" name="email" id="userEmail" placeholder="example@mail.ru" required>
-            <label>📝 Ваше ФИО:</label>
-            <input type="text" name="name" id="userName" placeholder="Иванов Иван Иванович" required>
-        </div>
-
+    <form id="quizForm">
         <div class="card">
             <div class="badge">Задача 1. Ситуация выбора</div>
             <div class="scenario">Вы сделали сайт, но заказчик говорит: «Мне не нравится, как выглядит кнопка». Что вы сделаете?</div>
             <div class="options">
-                <label class="option"><input type="radio" name="q1" value="А) Объясню, что «так модно», и оставлю как есть"> А) Объясню, что «так модно», и оставлю как есть</label>
-                <label class="option"><input type="radio" name="q1" value="Б) Выслушаю пожелания, предложу варианты и внесу правки"> Б) Выслушаю пожелания, предложу варианты и внесу правки</label>
-                <label class="option"><input type="radio" name="q1" value="В) Обижусь и откажусь от проекта"> В) Обижусь и откажусь от проекта</label>
-                <label class="option"><input type="radio" name="q1" value="Г) Сделаю вид, что не понял замечание"> Г) Сделаю вид, что не понял замечание</label>
+                <label class="option"><input type="radio" name="q1" value="A"> А) Объясню, что «так модно», и оставлю как есть</label>
+                <label class="option"><input type="radio" name="q1" value="B"> Б) Выслушаю пожелания, предложу варианты и внесу правки</label>
+                <label class="option"><input type="radio" name="q1" value="C"> В) Обижусь и откажусь от проекта</label>
+                <label class="option"><input type="radio" name="q1" value="D"> Г) Сделаю вид, что не понял замечание</label>
             </div>
         </div>
 
@@ -41,10 +27,10 @@
             <div class="badge">Задача 2. Ценностный ориентир</div>
             <div class="scenario">Что для вас интереснее в веб-разработке?</div>
             <div class="options">
-                <label class="option"><input type="radio" name="q2" value="А) Только писать код"> А) Только писать код</label>
-                <label class="option"><input type="radio" name="q2" value="Б) Создавать удобные и красивые решения, которые помогают людям"> Б) Создавать удобные и красивые решения, которые помогают людям</label>
-                <label class="option"><input type="radio" name="q2" value="В) Получать деньги и не вникать в детали"> В) Получать деньги и не вникать в детали</label>
-                <label class="option"><input type="radio" name="q2" value="Г) Работать только над «крутыми» проектами для известных брендов"> Г) Работать только над «крутыми» проектами для известных брендов</label>
+                <label class="option"><input type="radio" name="q2" value="A"> А) Только писать код</label>
+                <label class="option"><input type="radio" name="q2" value="B"> Б) Создавать удобные и красивые решения, которые помогают людям</label>
+                <label class="option"><input type="radio" name="q2" value="C"> В) Получать деньги и не вникать в детали</label>
+                <label class="option"><input type="radio" name="q2" value="D"> Г) Работать только над «крутыми» проектами для известных брендов</label>
             </div>
         </div>
 
@@ -52,10 +38,10 @@
             <div class="badge">Задача 3. Логика и безопасность</div>
             <div class="scenario">Почему важно проверять сайт на разных устройствах (телефон, планшет, компьютер)?</div>
             <div class="options">
-                <label class="option"><input type="radio" name="q3" value="А) Чтобы сайт выглядел одинаково красиво и работал корректно для всех пользователей"> А) Чтобы сайт выглядел одинаково красиво и работал корректно для всех пользователей</label>
-                <label class="option"><input type="radio" name="q3" value="Б) Это требование только для отчёта"> Б) Это требование только для отчёта</label>
-                <label class="option"><input type="radio" name="q3" value="В) Чтобы увеличить время разработки"> В) Чтобы увеличить время разработки</label>
-                <label class="option"><input type="radio" name="q3" value="Г) Чтобы показать, сколько я умею"> Г) Чтобы показать, сколько я умею</label>
+                <label class="option"><input type="radio" name="q3" value="A"> А) Чтобы сайт выглядел одинаково красиво и работал корректно для всех пользователей</label>
+                <label class="option"><input type="radio" name="q3" value="B"> Б) Это требование только для отчёта</label>
+                <label class="option"><input type="radio" name="q3" value="C"> В) Чтобы увеличить время разработки</label>
+                <label class="option"><input type="radio" name="q3" value="D"> Г) Чтобы показать, сколько я умею</label>
             </div>
         </div>
 
@@ -63,10 +49,10 @@
             <div class="badge">Задача 4. Профпроба «Команда»</div>
             <div class="scenario">В проекте над сайтом работает команда: дизайнер, программист, тестировщик. Вы заметили ошибку в чужой части работы. Что сделаете?</div>
             <div class="options">
-                <label class="option"><input type="radio" name="q4" value="А) Промолчу — «не моё дело»"> А) Промолчу — «не моё дело»</label>
-                <label class="option"><input type="radio" name="q4" value="Б) Тактично сообщу коллеге и предложу вместе исправить"> Б) Тактично сообщу коллеге и предложу вместе исправить</label>
-                <label class="option"><input type="radio" name="q4" value="В) Напишу жалобу руководителю без обсуждения с коллегой"> В) Напишу жалобу руководителю без обсуждения с коллегой</label>
-                <label class="option"><input type="radio" name="q4" value="Г) Сам исправлю чужой код без предупреждения"> Г) Сам исправлю чужой код без предупреждения</label>
+                <label class="option"><input type="radio" name="q4" value="A"> А) Промолчу — «не моё дело»</label>
+                <label class="option"><input type="radio" name="q4" value="B"> Б) Тактично сообщу коллеге и предложу вместе исправить</label>
+                <label class="option"><input type="radio" name="q4" value="C"> В) Напишу жалобу руководителю без обсуждения с коллегой</label>
+                <label class="option"><input type="radio" name="q4" value="D"> Г) Сам исправлю чужой код без предупреждения</label>
             </div>
         </div>
 
@@ -74,78 +60,154 @@
             <div class="badge">Задача 5. Образ профессии</div>
             <div class="scenario">Как вы представляете работу веб-разработчика?</div>
             <div class="options">
-                <label class="option"><input type="radio" name="q5" value="А) Сижу один в тёмной комнате и пишу код без общения"> А) Сижу один в тёмной комнате и пишу код без общения</label>
-                <label class="option"><input type="radio" name="q5" value="Б) Работаю в команде, обсуждаю задачи, учусь новому, тестирую и улучшаю продукт"> Б) Работаю в команде, обсуждаю задачи, учусь новому, тестирую и улучшаю продукт</label>
-                <label class="option"><input type="radio" name="q5" value="В) Только общаюсь с заказчиками, код пишут другие"> В) Только общаюсь с заказчиками, код пишут другие</label>
-                <label class="option"><input type="radio" name="q5" value="Г) Работаю только по готовым шаблонам, без творчества"> Г) Работаю только по готовым шаблонам, без творчества</label>
+                <label class="option"><input type="radio" name="q5" value="A"> А) Сижу один в тёмной комнате и пишу код без общения</label>
+                <label class="option"><input type="radio" name="q5" value="B"> Б) Работаю в команде, обсуждаю задачи, учусь новому, тестирую и улучшаю продукт</label>
+                <label class="option"><input type="radio" name="q5" value="C"> В) Только общаюсь с заказчиками, код пишут другие</label>
+                <label class="option"><input type="radio" name="q5" value="D"> Г) Работаю только по готовым шаблонам, без творчества</label>
             </div>
         </div>
 
+        <div class="form-group">
+            <label>📝 Ваше ФИО:</label>
+            <input type="text" id="userName" placeholder="Иванов Иван Иванович" required>
+        </div>
+
         <div class="actions">
-            <button type="submit" class="btn btn-primary">✉️ Отправить результаты на почту priem@bpkhmao.ru</button>
+            <button type="button" id="downloadBtn" class="btn btn-primary">📥 ШАГ 1: Скачать Excel-файл</button>
+            <button type="button" id="emailBtn" class="btn">📧 ШАГ 2: Отправить на почту priem@bpkhmao.ru</button>
             <button type="button" id="clearBtn" class="btn">🗑 Очистить всё</button>
         </div>
         <div id="statusMsg" class="status"></div>
-        <footer>После отправки вы будете перенаправлены на страницу FormSubmit. Проверьте папку "Спам", если письмо не пришло.</footer>
+        <footer>Скачайте Excel-файл и отправьте его на priem@bpkhmao.ru</footer>
     </form>
 </div>
 
+<script src="https://cdn.sheetjs.com/xlsx-0.20.2/package/dist/xlsx.full.min.js"></script>
 <script>
     (function() {
-        const form = document.getElementById('quizForm');
+        const downloadBtn = document.getElementById('downloadBtn');
+        const emailBtn = document.getElementById('emailBtn');
         const clearBtn = document.getElementById('clearBtn');
         const statusDiv = document.getElementById('statusMsg');
 
-        // Проверка заполнения формы перед отправкой
-        form.addEventListener('submit', function(event) {
-            // Проверяем ФИО
-            const name = document.querySelector('input[name="name"]')?.value.trim();
-            if (!name) {
-                event.preventDefault();
-                statusDiv.innerHTML = '❌ Введите ваше ФИО!';
-                statusDiv.className = 'status error';
-                return false;
-            }
-            
-            // Проверяем email
-            const email = document.querySelector('input[name="email"]')?.value.trim();
-            if (!email) {
-                event.preventDefault();
-                statusDiv.innerHTML = '❌ Введите ваш email!';
-                statusDiv.className = 'status error';
-                return false;
-            }
-            
-            // Проверяем, что все вопросы отмечены
+        function getAnswers() {
+            const answers = {};
             for (let i = 1; i <= 5; i++) {
                 const radios = document.getElementsByName('q' + i);
-                let isChecked = false;
+                let selected = null;
                 for (let j = 0; j < radios.length; j++) {
-                    if (radios[j].checked) {
-                        isChecked = true;
-                        break;
-                    }
+                    if (radios[j].checked) { selected = radios[j].value; break; }
                 }
-                if (!isChecked) {
-                    event.preventDefault();
-                    statusDiv.innerHTML = '❌ Пожалуйста, ответьте на ВСЕ 5 вопросов!';
-                    statusDiv.className = 'status error';
-                    return false;
-                }
+                if (!selected) return null;
+                answers['q' + i] = selected;
+            }
+            return answers;
+        }
+
+        function getAnswerText(q, value) {
+            const texts = {
+                1: {A: 'А) Объясню, что "так модно", оставлю как есть', B: 'Б) Выслушаю, предложу варианты, внесу правки', C: 'В) Обижусь и откажусь', D: 'Г) Сделаю вид, что не понял'},
+                2: {A: 'А) Только писать код', B: 'Б) Создавать удобные и красивые решения', C: 'В) Получать деньги и не вникать', D: 'Г) Только "крутые" проекты'},
+                3: {A: 'А) Корректно для всех пользователей', B: 'Б) Требование для отчёта', C: 'В) Увеличить время', D: 'Г) Показать, сколько умею'},
+                4: {A: 'А) Промолчу — не моё дело', B: 'Б) Сообщу коллеге, исправим вместе', C: 'В) Жалоба руководителю', D: 'Г) Сам исправлю'},
+                5: {A: 'А) Один в тёмной комнате', B: 'Б) Работа в команде, обсуждения', C: 'В) Только общаюсь', D: 'Г) По шаблонам'}
+            };
+            return texts[q]?.[value] || value;
+        }
+
+        function calculateScore(answers) {
+            let score = 0;
+            if (answers.q1 === 'B') score++;
+            if (answers.q2 === 'B') score++;
+            if (answers.q3 === 'A') score++;
+            if (answers.q4 === 'B') score++;
+            if (answers.q5 === 'B') score++;
+            return score;
+        }
+
+        function getInterpretation(score) {
+            if (score >= 4) return "Высокая мотивация";
+            if (score >= 2) return "Есть потенциал, требуется профориентация";
+            return "Рекомендована консультация";
+        }
+
+        function downloadExcel() {
+            const answers = getAnswers();
+            if (!answers) {
+                statusDiv.innerHTML = '❌ Ответьте на все вопросы!';
+                statusDiv.className = 'status error';
+                return;
             }
             
-            statusDiv.innerHTML = '⏳ Отправка результатов на почту priem@bpkhmao.ru...';
-            statusDiv.className = 'status';
-            return true;
-        });
+            const name = document.getElementById('userName')?.value || 'Аноним';
+            const score = calculateScore(answers);
+            const interpretation = getInterpretation(score);
+            
+            const excelData = [
+                ['АНКЕТА: ВЕБ-РАЗРАБОТЧИК'],
+                ['ФИО', name],
+                ['Дата', new Date().toLocaleString('ru-RU')],
+                ['Итоговый балл', score + ' из 5'],
+                ['Интерпретация', interpretation],
+                [],
+                ['Вопрос', 'Ответ', 'Балл'],
+                ['1. Ситуация выбора', getAnswerText(1, answers.q1), answers.q1 === 'B' ? '1' : '0'],
+                ['2. Ценностный ориентир', getAnswerText(2, answers.q2), answers.q2 === 'B' ? '1' : '0'],
+                ['3. Логика и безопасность', getAnswerText(3, answers.q3), answers.q3 === 'A' ? '1' : '0'],
+                ['4. Профпроба «Команда»', getAnswerText(4, answers.q4), answers.q4 === 'B' ? '1' : '0'],
+                ['5. Образ профессии', getAnswerText(5, answers.q5), answers.q5 === 'B' ? '1' : '0']
+            ];
+            
+            const ws = XLSX.utils.aoa_to_sheet(excelData);
+            const wb = XLSX.utils.book_new();
+            XLSX.utils.book_append_sheet(wb, ws, 'Результаты');
+            XLSX.writeFile(wb, `Веб-разработка_${name}_${Date.now()}.xlsx`);
+            
+            statusDiv.innerHTML = '✅ Excel-файл скачан! Теперь нажмите ШАГ 2 для отправки.';
+            statusDiv.className = 'status success';
+        }
+
+        function openEmail() {
+            const answers = getAnswers();
+            if (!answers) {
+                statusDiv.innerHTML = '❌ Сначала ответьте на все вопросы и скачайте Excel!';
+                statusDiv.className = 'status error';
+                return;
+            }
+            
+            const name = document.getElementById('userName')?.value;
+            if (!name) {
+                statusDiv.innerHTML = '❌ Введите ваше ФИО!';
+                statusDiv.className = 'status error';
+                return;
+            }
+            
+            const score = calculateScore(answers);
+            const interpretation = getInterpretation(score);
+            
+            const subject = encodeURIComponent(`Результаты теста: Веб-разработка - ${name}`);
+            const body = encodeURIComponent(
+                `Уважаемая приёмная комиссия!\n\n` +
+                `ФИО: ${name}\n` +
+                `Специальность: Веб-разработка\n` +
+                `Дата: ${new Date().toLocaleString('ru-RU')}\n` +
+                `Итоговый балл: ${score} из 5\n` +
+                `${interpretation}\n\n` +
+                `Результаты во вложенном Excel-файле.\n\n` +
+                `--\nОтправлено с сайта профориентационного тестирования`
+            );
+            
+            window.location.href = `mailto:priem@bpkhmao.ru?subject=${subject}&body=${body}`;
+            statusDiv.innerHTML = '📧 Открывается почта! Прикрепите скачанный Excel-файл и отправьте.';
+            statusDiv.className = 'status success';
+        }
+
+        downloadBtn.onclick = downloadExcel;
+        emailBtn.onclick = openEmail;
         
-        // Очистка формы
         clearBtn.onclick = function() {
             document.querySelectorAll('input[type="radio"]').forEach(r => r.checked = false);
-            const nameInput = document.querySelector('input[name="name"]');
-            const emailInput = document.querySelector('input[name="email"]');
-            if (nameInput) nameInput.value = '';
-            if (emailInput) emailInput.value = '';
+            if (document.getElementById('userName')) document.getElementById('userName').value = '';
             statusDiv.innerHTML = 'Форма очищена.';
             statusDiv.className = 'status';
         };
